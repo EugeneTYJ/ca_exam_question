@@ -31,15 +31,31 @@
                     <div class="grid grid-cols-2 gap-4">
                         <div class="shadow-xl border p-4 rounded-lg">
                             <h4 class="text-sm font-medium text-gray-500 mb-2">Annual Return</h4>
+                            <p class="text-2xl font-bold {{ $metrics['annual_return'] >= 0 ? 'text-green-600' : 'text-red-600' }}">
+                                {{ number_format($metrics['annual_return'] * 100, 2) }}%
+                            </p>
+                            <p class="text-xs text-gray-500 mt-1">Mean PnL × 365</p>
                         </div>
                         <div class="shadow-xl border p-4 rounded-lg">
                             <h4 class="text-sm font-medium text-gray-500 mb-2">Sharpe Ratio</h4>
+                            <p class="text-2xl font-bold text-blue-600">
+                                {{ number_format($metrics['sharpe_ratio'], 4) }}
+                            </p>
+                            <p class="text-xs text-gray-500 mt-1">(Mean / StdDev) × √365</p>
                         </div>
                         <div class="shadow-xl border p-4 rounded-lg">
                             <h4 class="text-sm font-medium text-gray-500 mb-2">Maximum Drawdown</h4>
+                            <p class="text-2xl font-bold text-red-600">
+                                {{ number_format($metrics['max_drawdown'] * 100, 2) }}%
+                            </p>
+                            <p class="text-xs text-gray-500 mt-1">Max of DD</p>
                         </div>
                         <div class="shadow-xl border p-4 rounded-lg">
                             <h4 class="text-sm font-medium text-gray-500 mb-2">Calmar Ratio</h4>
+                            <p class="text-2xl font-bold text-purple-600">
+                                {{ number_format($metrics['calmar_ratio'], 4) }}
+                            </p>
+                            <p class="text-xs text-gray-500 mt-1">Annual Return / |Max DD|</p>
                         </div>
                     </div>
                 </div>
