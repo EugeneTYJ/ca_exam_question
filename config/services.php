@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+    'cardinal_alpha' => [
+        'api_url' => env('CARDINAL_ALPHA_API_URL', 'https://exam.cardinalalpha.com'),
+        'api_token' => env('CARDINAL_ALPHA_API_TOKEN'),
+        'email' => env('CARDINAL_ALPHA_EMAIL'),
+    ],
+
 ];
